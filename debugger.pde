@@ -2,6 +2,8 @@ import processing.serial.*;
 import controlP5.*;
 
 
+PFont font;
+
 PrintWriter op;
 Serial port;
 String data;
@@ -17,8 +19,7 @@ long lSize;
 
 void setup(){
    
-  size(1024,600);
-  textSize(25);
+  size(840,580);
   
   cp5 = new ControlP5(this);
   
@@ -32,7 +33,7 @@ void setup(){
     .setSize(100,25);
     
   cp5.addButton("btnExport")
-     .setPosition(300,465)
+     .setPosition(355,550)
      .setSize(100,20);
     
     dList = cp5.addDropdownList("list")
@@ -47,14 +48,18 @@ void setup(){
              .setItemHeight(15)
              .setBarHeight(15);
              
+    lBox = cp5.addListBox("cBox")
+             .setPosition(480, 235)
+             .setSize(350,300)
+             .setItemHeight(15)
+             .setBarHeight(15);
+             
    lData = new ArrayList();
    lSize = 0;
   
   
   portNames = Serial.list();
   dList.addItems(portNames); 
-  dList.setValue(0.1);
-  
   
   //port = new Serial(this,portNames[5], 9600);
   
@@ -64,7 +69,11 @@ void setup(){
 
 void draw(){
   
-  background(180);
+  background(210);
+  fill(255);
+  
+  rect(45,95,410,450);
+  rect(475,230,360,310);
   
  if(port!=null && port.available()>0){
    
@@ -79,10 +88,12 @@ void draw(){
     
   } 
   
+  
+  /**
   if(keyPressed){
     if(key== 's'){port.write('s');}
     if(key=='t'){port.write('t');}
-  }
+  }**/
 }
 
 public void controlEvent(ControlEvent event){
@@ -102,10 +113,7 @@ public void controlEvent(ControlEvent event){
 }
 
 public void lBox(float choice){
-  
-  println("list box");
    
-  
 }
 
 public void btnExport(){
