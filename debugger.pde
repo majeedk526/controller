@@ -5,7 +5,7 @@ import controlP5.*;
 PFont font;
 
 PrintWriter op;
-Serial port;
+public Serial port;
 String data;
 
 ControlP5 cp5;
@@ -13,7 +13,7 @@ String textValue = "";
 DropdownList dList;
 String[] portNames;
 
-ListBox lBox;
+ListBox lBox, cBox;
 ArrayList<String> lData;
 long lSize;
 
@@ -42,13 +42,38 @@ void setup(){
                 .setItemHeight(20)
                 .setBarHeight(25);
                 
+   cp5.addButton("btnStart")
+     .setPosition(470,95)
+     .setSize(100,30);
+   
+   cp5.addButton("btnStop")
+     .setPosition(470,130)
+     .setSize(100,30);
+     
+     
+  cp5.addButton("btnForward")
+     .setPosition(670,95)
+     .setSize(40,40);
+  
+  cp5.addButton("btnLeft")
+     .setPosition(625,140)
+     .setSize(40,40);
+     
+  cp5.addButton("btnBack")
+     .setPosition(670,140)
+     .setSize(40,40);
+  
+  cp5.addButton("btnRight")
+     .setPosition(715,140)
+     .setSize(40,40);
+     
    lBox = cp5.addListBox("lBox")
              .setPosition(50, 100)
              .setSize(400,460)
              .setItemHeight(15)
              .setBarHeight(15);
              
-    lBox = cp5.addListBox("cBox")
+    cBox = cp5.addListBox("cBox")
              .setPosition(480, 235)
              .setSize(350,300)
              .setItemHeight(15)
@@ -89,11 +114,11 @@ void draw(){
   } 
   
   
-  /**
+  
   if(keyPressed){
     if(key== 's'){port.write('s');}
     if(key=='t'){port.write('t');}
-  }**/
+  }
 }
 
 public void controlEvent(ControlEvent event){
