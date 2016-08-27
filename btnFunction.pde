@@ -62,7 +62,7 @@ public void btnExport(){
     
     op = createWriter("export.csv");
     for(int i=0; i<lData.size(); i++){
-      op.println(lData.get(i));
+      op.print(lData.get(i));
       
     }
     op.flush();

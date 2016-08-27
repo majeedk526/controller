@@ -11,8 +11,8 @@ void keyPressed(){
     
     } else {
     
-      //if(key== 's'){port.write('s');}
-      //if(key=='t'){port.write('t');}
+      if(key== 's'){port.write('s');}
+      if(key=='t'){port.write('t');}
     
     }
     
