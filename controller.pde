@@ -2,9 +2,6 @@ import processing.serial.*;
 import controlP5.*;
 import static javax.swing.JOptionPane.*;
 
-
-
-
 PrintWriter op;
 public Serial port;
 String data;
@@ -65,18 +62,6 @@ void draw(){
 }
 
 public void controlEvent(ControlEvent event){
-  
-  //println(event.getController().getName());
-  
-  if (event.isGroup()) {
-    //println("event from group : "+event.getGroup().getValue()+" from "+event.getGroup());
-  } 
-  else if (event.isController()) {
-    //println("event from controller : "+event.getController().getValue()+" from "+event.getController());
-    //sCom = (int) event.getController().getValue();
-    //println(sCom);
-    //println(cp5.get(DropdownList.class,"list"));
-  }
   
 }
 
