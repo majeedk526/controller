@@ -110,3 +110,29 @@ public void btnSend(){
   clear();
   
 }
+public void btnSCAN(){
+ cp5.get(Button.class,"btnSCAN").getName();
+  dList.clear(); 
+ portNames = Serial.list();
+  dList.addItems(portNames);
+
+}
+
+public void btnRESET(){
+    
+  cp5.get(Button.class,"bt2nRESET").getName();
+  if(lSize>0){
+    lData = new ArrayList();
+  lSize = 0;
+  lBox.clear();
+  }
+  
+
+}
+
+public void btnABOUTUS(){
+  showMessageDialog(null, "Created by SYMBOTICS", 
+    "Alert", INFORMATION_MESSAGE);
+
+
+}
